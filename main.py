@@ -14,11 +14,12 @@ def parseData(file):
         for idx, value in enumerate( entry.split(',') ):
 
             if idx == 0:
-                if int(value) > 40:
-                    output.append(1)
-                else: 
-                    output.append(0)
-                continue
+                output.append(int(value))
+                # if int(value) > 40:
+                #     output.append(1)
+                # else: 
+                #     output.append(0)
+                # continue
 
             if value in ['Yes', 'Female', "Positive"]:
                     output.append(1)
@@ -131,7 +132,7 @@ def testModel(train_file, test_file, limit):
 
 
 
-testModel(test, train, 5000)
+testModel(test, train, 30000)
 
 
 
